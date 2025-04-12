@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Pages
 import Home from "./Pages/Home";
@@ -10,10 +9,10 @@ import Login from "./Pages/Login";
 
 //Admin Dashboard Pages
 
-import AdminLayout from './dashboard/admin/AdminLayout';
-import Dashboard from "./dashboard/admin/Dashboard";  
+import AdminLayout from "./dashboard/admin/AdminLayout";
+import Dashboard from "./dashboard/admin/Dashboard";
 import Complaint from "./dashboard/admin/Complaint";
-import Staff from "./dashboard/admin/Staff"
+import Staff from "./dashboard/admin/Staff";
 
 // User Dashboard Pages
 import UserDashboard from "./dashboard/user/UserDashboard";
@@ -24,7 +23,6 @@ import AddComment from "./dashboard/user/AddComment";
 import StaffDashboard from "./dashboard/staff/StaffDashboard";
 import AssignedComplaints from "./dashboard/staff/AssignedComplaints";
 import UpdateStatus from "./dashboard/staff/UpdateStatus";
-
 
 // Components (if needed globally)
 import Navbar from "./components/Navbar";
@@ -40,18 +38,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={< Signup />} />
-        
-        {/* Admin Dashboard Routes */}
-        <Route path="/admin/adminlayout" element={<AdminLayout />} />
-        
-        <Route path="/admin/dashboard" element={<Dashboard />} />
-         
+        <Route path="/signup" element={<Signup />} />
 
-        
-        <Route path="/admin/complaint" element={<Complaint />} />
-        <Route path="/admin/staff" element={<Staff />} />
- 
+        {/* Admin Dashboard Routes */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="complaint" element={<Complaint />} />
+          <Route path="staff" element={<Staff />} />
+        </Route>
 
         {/* User Dashboard Routes */}
         <Route path="/user/dashboard" element={<UserDashboard />} />
@@ -62,9 +56,11 @@ function App() {
 
         {/* Staff Dashboard Routes */}
         <Route path="/staff/dashboard" element={<StaffDashboard />} />
-        <Route path="/staff/assigned-complaints" element={<AssignedComplaints />} />
+        <Route
+          path="/staff/assigned-complaints"
+          element={<AssignedComplaints />}
+        />
         <Route path="/staff/update-status" element={<UpdateStatus />} />
-      
       </Routes>
     </Router>
   );

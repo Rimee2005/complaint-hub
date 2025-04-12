@@ -41,7 +41,7 @@ const Staff = () => {
 const tableStyle = {
   width: "100%",
   borderCollapse: "collapse",
-  backgroundColor: "#343a40",
+//   backgroundColor: "#343a40",
   borderRadius: "8px",
 };
 
