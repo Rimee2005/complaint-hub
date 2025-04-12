@@ -47,10 +47,8 @@ const AdminDashboard = () => {
   const [hoverIndex, setHoverIndex] = React.useState(null);
 
   const cards = [
-    { title: "Complaint Management", icon: "🗂️", path: "/admin/complaint-management" },
-    { title: "Assign Staff", icon: "🧑‍🔧", path: "/admin/assign-staff" },
-    { title: "Track Status", icon: "📈", path: "/admin/track-status" },
-    { title: "Profile", icon: "👤", path: "/admin/profile" },
+    { title: "Complaint Management", icon: "🗂️", path: "/admin/complaint" },
+    { title: "Assign Staff", icon: "🧑‍🔧", path: "/admin/staff" },
   ];
 
   return (
