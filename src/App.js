@@ -10,6 +10,7 @@ import Login from "./Pages/Login";
 
 // Components (if needed globally)
 import Navbar from "./components/Navbar";
+import Signup from "./Pages/Signup";
 
 // Dummy placeholders for dashboards (if needed later)
 // import UserDashboard from "./dashboards/user/Dashboard";
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={< Signup />} />
       </Routes>
     </Router>
   );
