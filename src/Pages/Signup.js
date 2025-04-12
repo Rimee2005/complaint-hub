@@ -1,32 +1,33 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';  // useNavigate instead of useHistory
 
-const Login = () => {
+const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();  // Replace useHistory with useNavigate
 
-  const handleLogin = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
-    // Placeholder for authentication logic (API call)
-    if (email === 'admin@complainthub.com' && password === 'password') {
-      // If login is successful, redirect to the dashboard
-      navigate('/dashboard');  // Use navigate instead of history.push
+    // Placeholder for signup logic (API call)
+    if (password !== confirmPassword) {
+      setError('Passwords do not match!');
     } else {
-      setError('Invalid credentials. Please try again.');
+      // If signup is successful, redirect to the login page
+      navigate('/login');  // Use navigate instead of history.push
     }
   };
 
   return (
     <div style={{ backgroundColor: '#212529', color: '#f8f9fa', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div style={{ backgroundColor: '#343a40', borderRadius: '8px', padding: '40px', width: '100%', maxWidth: '400px' }}>
-        <h2 className="text-center mb-4" style={{ color: '#f8f9fa' }}>Login to Complaint Hub</h2>
+        <h2 className="text-center mb-4" style={{ color: '#f8f9fa' }}>Sign Up</h2>
 
         {/* Error Message */}
         {error && <div style={{ color: '#dc3545', marginBottom: '20px' }}>{error}</div>}
 
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleSignup}>
           <div className="form-group mb-3">
             <label htmlFor="email" className="form-label">Email Address</label>
             <input
@@ -39,7 +40,7 @@ const Login = () => {
               style={{ backgroundColor: '#495057', color: '#f8f9fa' }}
             />
           </div>
-          
+
           <div className="form-group mb-3">
             <label htmlFor="password" className="form-label">Password</label>
             <input
@@ -52,24 +53,29 @@ const Login = () => {
               style={{ backgroundColor: '#495057', color: '#f8f9fa' }}
             />
           </div>
-          
-          <div className="d-flex justify-content-between mb-3">
-            <div className="form-check">
-              <input type="checkbox" className="form-check-input" id="rememberMe" />
-              <label className="form-check-label" htmlFor="rememberMe">Remember Me</label>
-            </div>
-            <a href="/forgot-password" style={{ color: '#007bff' }}>Forgot password?</a>
+
+          <div className="form-group mb-3">
+            <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              className="form-control"
+              placeholder="Confirm your password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              style={{ backgroundColor: '#495057', color: '#f8f9fa' }}
+            />
           </div>
 
-          <button type="submit" className="btn btn-primary w-100">Login</button>
+          <button type="submit" className="btn btn-primary w-100">Sign Up</button>
         </form>
 
         <div className="text-center mt-3" style={{ color: '#f8f9fa' }}>
-          <p>Don't have an account? <a href="/signup" style={{ color: '#007bff' }}>Sign up</a></p>
+          <p>Already have an account? <a href="/login" style={{ color: '#007bff' }}>Login</a></p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
