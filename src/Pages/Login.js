@@ -11,8 +11,14 @@ const Login = () => {
     e.preventDefault();
     // Placeholder for authentication logic (API call)
     if (email === 'admin@complainthub.com' && password === 'password') {
-      // If login is successful, redirect to the dashboard
-      navigate('/dashboard');  // Use navigate instead of history.push
+      // If login is successful, redirect to the Admin dashboard
+      navigate('/admin/dashboard');  // navigate to admin dashboard
+    } else if (email === 'staff@complainthub.com' && password === 'password') {
+      // Staff dashboard ke liye redirect
+      navigate('/staff/dashboard');
+    } else if (email === 'user@complainthub.com' && password === 'password') {
+      // User dashboard ke liye redirect
+      navigate('/user/dashboard');
     } else {
       setError('Invalid credentials. Please try again.');
     }
