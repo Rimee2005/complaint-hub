@@ -12,7 +12,7 @@ const Login = () => {
     // Placeholder for authentication logic (API call)
     if (email === 'admin@complainthub.com' && password === 'password') {
       // If login is successful, redirect to the Admin dashboard
-      navigate('/admin/dashboard');  // navigate to admin dashboard
+      navigate('/admin/adminlayout');  // navigate to admin dashboard
     } else if (email === 'staff@complainthub.com' && password === 'password') {
       // Staff dashboard ke liye redirect
       navigate('/staff/dashboard');

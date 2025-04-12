@@ -8,9 +8,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 
-// Dashboard Pages
-import AdminDashboard from "./dashboard/admin/AdminDashboard";
+//Admin Dashboard Pages
+
+import AdminLayout from './dashboard/admin/AdminLayout';
+import Dashboard from "./dashboard/admin/Dashboard";  
+import Complaint from "./dashboard/admin/Complaint";
 import Staff from "./dashboard/admin/Staff"
+
+// User Dashboard Pages
 import UserDashboard from "./dashboard/user/UserDashboard";
 import ComplaintForm from "./dashboard/user/ComplaintForm";
 import ComplaintList from "./dashboard/user/ComplaintList";
@@ -19,7 +24,7 @@ import AddComment from "./dashboard/user/AddComment";
 import StaffDashboard from "./dashboard/staff/StaffDashboard";
 import AssignedComplaints from "./dashboard/staff/AssignedComplaints";
 import UpdateStatus from "./dashboard/staff/UpdateStatus";
-import Complaint from "./dashboard/admin/Complaint";
+
 
 // Components (if needed globally)
 import Navbar from "./components/Navbar";
@@ -38,7 +43,12 @@ function App() {
         <Route path="/signup" element={< Signup />} />
         
         {/* Admin Dashboard Routes */}
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/adminlayout" element={<AdminLayout />} />
+        
+        <Route path="/admin/dashboard" element={<Dashboard />} />
+         
+
+        
         <Route path="/admin/complaint" element={<Complaint />} />
         <Route path="/admin/staff" element={<Staff />} />
  
